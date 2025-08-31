@@ -26,9 +26,6 @@ student_performance_predictor/
 │   ├── EDA STUDENT PERFORMANCE.ipynb  # Exploratory Data Analysis
 │   └── MODEL TRAINING.ipynb           # Model training & evaluation
 │
-├── notebooks/                            # Jupyter notebooks
-│   └── student_performance_EDA.ipynb     # EDA and visualization
-│
 ├── src/                                  # Source code
 │   ├── __init__.py
 │   ├── logger.py                         # Logging utility
