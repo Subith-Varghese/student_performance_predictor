@@ -2,7 +2,7 @@
 
 Predict students’ Math scores based on demographic and academic features using Machine Learning. This project includes data preprocessing, model training, evaluation, and deployment via a web interface.
 
-Project Overview
+## Project Overview
 
 Many educators and institutions want to understand factors influencing student performance. This project predicts Math scores using features like:
 
@@ -59,21 +59,21 @@ student_performance_predictor/
 
 ---
 ## Project Workflow
-1️⃣ Data Downloading
+1️⃣ ### Data Downloading
 - Dataset is downloaded from Kaggle using opendatasets.
 - Path: data/students-performance-in-exams/StudentsPerformance.csv.
 
-2️⃣ Data Preprocessing
+2️⃣ ### Data Preprocessing
 - Features are separated into numerical (reading score, writing score) and categorical (gender, race/ethnicity, lunch, test preparation course, parental level of education).
 - Categorical features are one-hot encoded.
 - Numerical features are standard scaled.
 - The preprocessing pipeline is saved as artifacts/preprocessor.pkl.
 
-3️⃣ Train-Test Split
+3️⃣ ### Train-Test Split
 - Dataset is split 80% train / 20% test.
 - Split datasets are saved as CSV for reproducibility.
 
-4️⃣ Model Training
+4️⃣ ### Model Training
 - Regression models trained:
   - Linear Regression
   - Ridge
@@ -82,12 +82,12 @@ student_performance_predictor/
 - Models are evaluated using: R2 score, RMSE, MAE.
 - Best model is saved as artifacts/best_model.pkl.
 
-5️⃣ Prediction
+5️⃣ ### Prediction
 
 - Users can input new student data through a Flask web app.
 - The pipeline preprocesses inputs and predicts the Math score.
 
-6️⃣ Deployment
+6️⃣ ### Deployment
 
 - Flask app runs locally:
 ```
@@ -144,12 +144,6 @@ python app.py
 - Fill student details and get predicted Math score.
 
 ---
-# Student Performance Indicator - Machine Learning Project
-
-This project predicts and analyzes student performance (math scores) based on various features such as gender, ethnicity, parental education, lunch type, and test preparation course.
-
----
-
 ## Notebooks
 
 ### 1. **EDA_STUDENT_PERFORMANCE.ipynb**
@@ -182,7 +176,7 @@ This project predicts and analyzes student performance (math scores) based on va
 - Best performing models: Linear, Ridge, and Lasso Regression
 
 ---
-KeyInsights & Observations
+## KeyInsights & Observations
 - **Female students** generally perform better overall.
 - **Males** tend to have higher Math scores than females.
 - **Standard lunch** improves overall performance.
