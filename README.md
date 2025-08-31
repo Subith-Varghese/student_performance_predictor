@@ -1,4 +1,4 @@
-🎓 Student Performance Predictor
+# 🎓 Student Performance Predictor
 
 Predict students’ Math scores based on demographic and academic features using Machine Learning. This project includes data preprocessing, model training, evaluation, and deployment via a web interface.
 
@@ -6,30 +6,24 @@ Project Overview
 
 Many educators and institutions want to understand factors influencing student performance. This project predicts Math scores using features like:
 
-Gender
-
-Race/Ethnicity
-
-Parental Level of Education
-
-Lunch Type
-
-Test Preparation Course
-
-Reading Score
-
-Writing Score
+- Gender
+- Race/Ethnicity
+- Parental Level of Education
+- Lunch Type
+- Test Preparation Course
+- Reading Score
+- Writing Score
 
 We train multiple regression models and select the best-performing one for deployment.
-
-Project Structure
+---
+## Project Structure
 
 ```
 student_performance_predictor/
 │
-├── data/                                 # Dataset folder
-│   └── students-performance-in-exams/   # Downloaded dataset
-│       └── StudentsPerformance.csv
+├── notebooks/                            # Jupyter notebooks
+│   ├── EDA STUDENT PERFORMANCE.ipynb  # Exploratory Data Analysis
+│   └── MODEL TRAINING.ipynb           # Model training & evaluation
 │
 ├── notebooks/                            # Jupyter notebooks
 │   └── student_performance_EDA.ipynb     # EDA and visualization
@@ -63,7 +57,7 @@ student_performance_predictor/
 ```
 
 ---
-Project Workflow
+## Project Workflow
 1️⃣ Data Downloading
 - Dataset is downloaded from Kaggle using opendatasets.
 - Path: data/students-performance-in-exams/StudentsPerformance.csv.
@@ -110,3 +104,89 @@ python app.py
 | Reading Score               | Number     | 0–100                                                                                               |
 | Writing Score               | Number     | 0–100                                                                                               |
 ---
+```
+# Clone the repository
+git clone https://github.com/Subith-Varghese/student_performance_predictor.git
+cd student_performance_predictor
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Download dataset (optional)
+python src/components/data_downloader.py
+```
+---
+Running the Training Pipeline
+```
+python src/pipelines/training_pipeline.py
+```
+- This trains the model and saves the artifacts (preprocessor.pkl & best_model.pkl).
+- It also saves train/test datasets as CSV.
+---
+
+Running the Prediction Pipeline
+```
+python src/pipelines/predict_pipeline.py
+```
+- Accepts user inputs for all required features.
+- Returns predicted Math score.
+---
+Running the Web App
+```
+python app.py
+```
+- Open browser: http://127.0.0.1:5000/
+- Fill student details and get predicted Math score.
+
+---
+# Student Performance Indicator - Machine Learning Project
+
+This project predicts and analyzes student performance (math scores) based on various features such as gender, ethnicity, parental education, lunch type, and test preparation course.
+
+---
+
+## Notebooks
+
+### 1. **EDA_STUDENT_PERFORMANCE.ipynb**
+**Exploratory Data Analysis (EDA)**  
+- Initial data exploration: missing values, duplicates, data types, statistics  
+- Feature engineering: `total_score`, `average`  
+- Visualization:
+  - Distribution plots (histograms, KDE)  
+  - Pie charts for categorical features  
+  - Pairplots for multivariate analysis  
+  - Boxplots to detect outliers  
+- Insights:
+  - Female students generally perform better overall  
+  - Male students score higher in Math  
+  - Standard lunch improves overall performance  
+  - Parental education positively correlates with student scores  
+
+### 2. **MODEL_TRAINING.ipynb**
+**Preprocessing & Model Training**  
+- Features encoding: One-hot encoding for categorical variables, scaling numerical columns  
+- Train-test split: 80/20  
+- Models trained:
+  - Linear Regression
+  - Ridge & Lasso Regression
+  - K-Nearest Neighbors
+  - Decision Tree & Random Forest
+  - XGBoost, CatBoost, AdaBoost
+- Model evaluation using **R², MAE, RMSE**
+- Hyperparameter tuning using GridSearchCV for Ridge and Lasso
+- Best performing models: Linear, Ridge, and Lasso Regression
+
+---
+KeyInsights & Observations
+- **Female students** generally perform better overall.
+- **Males** tend to have higher Math scores than females.
+- **Standard lunch** improves overall performance.
+- **Parental education** is positively correlated with performance.
+- **Test Preparation**: Completing test prep courses improves overall scores  
+- **Modeling**: Linear, Ridge, and Lasso regression models perform similarly with ~88% R² on test set
+
+
