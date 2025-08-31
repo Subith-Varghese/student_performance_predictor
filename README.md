@@ -56,7 +56,7 @@ student_performance_predictor/
 
 ---
 ## Project Workflow
-1️⃣ ### Data Downloading
+### 1️⃣ Data Downloading
 - Dataset is downloaded from Kaggle using opendatasets.
 - Path: data/students-performance-in-exams/StudentsPerformance.csv.
 
@@ -66,11 +66,11 @@ student_performance_predictor/
 - Numerical features are standard scaled.
 - The preprocessing pipeline is saved as artifacts/preprocessor.pkl.
 
-3️⃣ ### Train-Test Split
+### 3️⃣ Train-Test Split
 - Dataset is split 80% train / 20% test.
 - Split datasets are saved as CSV for reproducibility.
 
-4️⃣ ### Model Training
+### 4️⃣ Model Training
 - Regression models trained:
   - Linear Regression
   - Ridge
@@ -79,12 +79,12 @@ student_performance_predictor/
 - Models are evaluated using: R2 score, RMSE, MAE.
 - Best model is saved as artifacts/best_model.pkl.
 
-5️⃣ ### Prediction
+### 5️⃣ Prediction
 
 - Users can input new student data through a Flask web app.
 - The pipeline preprocesses inputs and predicts the Math score.
 
-6️⃣ ### Deployment
+### 6️⃣ Deployment
 
 - Flask app runs locally:
 ```
