@@ -24,6 +24,7 @@ We train multiple regression models and select the best-performing one for deplo
 
 Project Structure
 
+```
 student_performance_predictor/
 │
 ├── data/                                 # Dataset folder
@@ -53,9 +54,59 @@ student_performance_predictor/
 │   ├── best_model.pkl                     # Trained ML model
 │
 ├── templates/                            # Flask HTML templates
-│   └── home.html                          # Prediction form
+│   └── home.html                         # Prediction form
+│   └── result.html                          
 │
 ├── app.py                                # Flask web app
 ├── requirements.txt                      # Python dependencies
-├── setup.py                              
 └── README.md                             
+```
+
+---
+Project Workflow
+1️⃣ Data Downloading
+- Dataset is downloaded from Kaggle using opendatasets.
+- Path: data/students-performance-in-exams/StudentsPerformance.csv.
+
+2️⃣ Data Preprocessing
+- Features are separated into numerical (reading score, writing score) and categorical (gender, race/ethnicity, lunch, test preparation course, parental level of education).
+- Categorical features are one-hot encoded.
+- Numerical features are standard scaled.
+- The preprocessing pipeline is saved as artifacts/preprocessor.pkl.
+
+3️⃣ Train-Test Split
+- Dataset is split 80% train / 20% test.
+- Split datasets are saved as CSV for reproducibility.
+
+4️⃣ Model Training
+- Regression models trained:
+  - Linear Regression
+  - Ridge
+  - Lasso
+
+- Models are evaluated using: R2 score, RMSE, MAE.
+- Best model is saved as artifacts/best_model.pkl.
+
+5️⃣ Prediction
+
+- Users can input new student data through a Flask web app.
+- The pipeline preprocesses inputs and predicts the Math score.
+
+6️⃣ Deployment
+
+- Flask app runs locally:
+```
+python app.py
+```
+- Accessible via browser: http://127.0.0.1:5000/.
+---
+| Feature                     | Input Type | Options                                                                                             |
+| --------------------------- | ---------- | --------------------------------------------------------------------------------------------------- |
+| Gender                      | Dropdown   | Male, Female                                                                                        |
+| Race/Ethnicity              | Dropdown   | Group A, B, C, D, E                                                                                 |
+| Parental Level of Education | Dropdown   | Some High School, High School, Some College, Associate's Degree, Bachelor's Degree, Master's Degree |
+| Lunch Type                  | Dropdown   | Standard, Free/Reduced                                                                              |
+| Test Preparation Course     | Dropdown   | None, Completed                                                                                     |
+| Reading Score               | Number     | 0–100                                                                                               |
+| Writing Score               | Number     | 0–100                                                                                               |
+---
