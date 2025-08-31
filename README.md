@@ -60,7 +60,7 @@ student_performance_predictor/
 - Dataset is downloaded from Kaggle using opendatasets.
 - Path: data/students-performance-in-exams/StudentsPerformance.csv.
 
-2️⃣ ### Data Preprocessing
+### 2️⃣ Data Preprocessing
 - Features are separated into numerical (reading score, writing score) and categorical (gender, race/ethnicity, lunch, test preparation course, parental level of education).
 - Categorical features are one-hot encoded.
 - Numerical features are standard scaled.
