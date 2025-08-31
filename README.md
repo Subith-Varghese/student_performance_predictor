@@ -107,9 +107,9 @@ python app.py
 git clone https://github.com/Subith-Varghese/student_performance_predictor.git
 cd student_performance_predictor
 
-# Create virtual environment
+# Create virtual environment and activate
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
