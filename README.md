@@ -2,6 +2,7 @@
 
 Predict students’ Math scores based on demographic and academic features using Machine Learning. This project includes data preprocessing, model training, evaluation, and deployment via a web interface.
 
+https://github.com/Subith-Varghese/student_performance_predictor/blob/0f2ed14492d3b0264259329528807b44f3795cb7/Screenshot_1.png
 ## Project Overview
 
 Many educators and institutions want to understand factors influencing student performance. This project predicts Math scores using features like:
