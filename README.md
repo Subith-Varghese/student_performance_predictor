@@ -4,6 +4,7 @@ Predict students’ Math scores based on demographic and academic features using
 
 ![Student Performance Predictor](https://github.com/Subith-Varghese/student_performance_predictor/blob/0f2ed14492d3b0264259329528807b44f3795cb7/Screenshot_1.png)
 
+## Predicted Output:
 ![Student Performance Predictor_1](https://github.com/Subith-Varghese/student_performance_predictor/blob/76a472d2970cb6785f65b1ee33b03c585bff5a1a/Screenshot_2.png)
 ## Project Overview
 
